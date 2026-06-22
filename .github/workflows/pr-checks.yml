@@ -1,0 +1,20 @@
+name: PR Checks
+
+on:
+  pull_request:
+    branches:
+      - main
+
+permissions: {}
+
+jobs:
+  trunk-check:
+    runs-on: ubuntu-latest
+    permissions:
+      checks: write
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Trunk Code Quality
+        uses: trunk-io/trunk-action@v1
