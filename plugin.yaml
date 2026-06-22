@@ -1,12 +1,16 @@
 version: 0.1
 lint:
   ignore:
-    - linters: [markdownlint]
+    - linters: [ALL]
       paths:
         - .github/copilot-instructions.md
         - .github/docs/**
         - .github/instructions/**
         - .github/prompts/**
+        - .github/parked-sessions/**
+        - .github/issue-drafts/**
+        - .github/plans/**
+        - .github/*.md
     - linters: [stylua]
       paths:
         - "**/locale/*"
