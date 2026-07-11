@@ -7,29 +7,16 @@ cli:
 plugins:
   sources:
     - id: trunk
-      ref: v1.10.2
       uri: https://github.com/trunk-io/plugins
-# Many linters and tools depend on runtimes - configure them here. (https://docs.trunk.io/runtimes)
-runtimes:
-  enabled:
-    - go@1.25.11
-    - node@24.17.0
-    - python@3.14.4
-# This is the section where you manage your linters. (https://docs.trunk.io/check/configuration)
-lint:
-  enabled:
-    - markdownlint@0.49.0
-    - actionlint@1.7.12
-    - pinact@4.1.0
-    - checkov@3.3.1
-    - git-diff-check
-    - prettier@3.8.4
-    - taplo@0.10.0
-    - trufflehog@3.95.6
-    - yamllint@1.38.0
+      ref: v1.10.2
+
+    - id: configs
+      local: .
+
 actions:
-  enabled:
+  disabled:
     - trunk-announce
     - trunk-check-pre-push
     - trunk-fmt-pre-commit
+  enabled:
     - trunk-upgrade-available

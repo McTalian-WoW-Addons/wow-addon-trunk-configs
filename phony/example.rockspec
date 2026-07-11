@@ -1,0 +1,1 @@
+-- Example Lua Rocks spec
