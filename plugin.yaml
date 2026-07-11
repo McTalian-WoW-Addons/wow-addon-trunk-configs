@@ -40,3 +40,9 @@ lint:
         - configs/stylua.toml
         - configs/ruff.toml
         - configs/.isort.cfg
+actions:
+  definitions:
+    - id: organize-translations
+      triggers:
+        - git_hooks: [pre-commit]
+      run: uv run --with defusedxml --no-project .trunk/plugins/wbt-configs/scripts/organize_translations/organize_translations.py
